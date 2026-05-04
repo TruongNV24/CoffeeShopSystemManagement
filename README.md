@@ -1,33 +1,43 @@
-## Getting Started
+## Coffee Shop System Management
 
-A simple Coffee Shop Management System by using JavaFX. It is designed to make it easier for Customer to make an order by themselves and for Seller to calculate profits per month and so on. In this system, there are 3 Roles:
- - Admin: can manage system, add user, check dashboard, ....
- - Cashier: can accept the payment and push the order to Barista or decline the payment if there is some problem with the customer
- - Barista: can accept the order and make drink based on their order.
+Dự án gốc dùng JavaFX. Mình đã bổ sung thêm phiên bản **Python + SQLite** để chạy nhanh trong **Visual Studio Code**.
 
-![image](https://user-images.githubusercontent.com/83401742/225241395-35f40a2a-e640-45f7-8ad7-8d1bfc344d78.png)
-![image](https://user-images.githubusercontent.com/83401742/225241643-a2d01358-c8a1-476d-9cbf-509751499887.png)
-![image](https://user-images.githubusercontent.com/83401742/225241766-be2a5091-f89d-4760-abd5-9987c643f7d9.png)
-![image](https://user-images.githubusercontent.com/83401742/225241880-eb02231c-9f62-4230-b0fd-3eb87e2edb87.png)
-![image](https://user-images.githubusercontent.com/83401742/225242388-10fbc741-93c8-488d-a49a-095985910379.png)
-![image](https://user-images.githubusercontent.com/83401742/225242437-1c7b1a5b-be3d-497b-a842-7290cd45492c.png)
-![image](https://user-images.githubusercontent.com/83401742/225242474-abfecc9f-d5fe-480a-afaa-ff96af77b5f5.png)
-![image](https://user-images.githubusercontent.com/83401742/225242552-6bf998f2-c2d1-4ed8-9e78-5c9e4f4a2c86.png)
-![image](https://user-images.githubusercontent.com/83401742/225242597-84e86705-e5e1-4e2f-b32a-ef3f63fbb14c.png)
-![image](https://user-images.githubusercontent.com/83401742/225242641-f15c6519-d696-4639-96c7-cccd29924605.png)
-![image](https://user-images.githubusercontent.com/83401742/225242699-8325c764-1f68-43b8-8e29-29fef6d79978.png)
+## Python version (VS Code friendly)
 
-## Folder Structure
+Thư mục mới: `python_app/`
 
-The workspace contains two folders by default, where:
+### 1) Tạo môi trường
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 2) Khởi tạo database SQLite
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```bash
+python python_app/app.py init-db
+```
 
-## Dependency Management
+File database sẽ được tạo tại:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- `python_app/coffeeshop.db`
+
+### 3) Chạy các lệnh quản lý
+
+```bash
+python python_app/app.py list-drinks
+python python_app/app.py add-drink Espresso 2.2
+python python_app/app.py create-order cashier1 1 2
+python python_app/app.py revenue
+```
+
+## VS Code config đã thêm
+
+- `.vscode/settings.json`: cấu hình Python interpreter + analysis.
+- `.vscode/launch.json`: cấu hình debug nhanh cho CLI Python.
+
+## Ghi chú
+
+- Database dùng **SQLite** như yêu cầu.
+- Schema gồm: `users`, `drinks`, `orders`, `order_items`.

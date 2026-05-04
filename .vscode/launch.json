@@ -1,30 +1,13 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Launch Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "CoffeeShopSystemManagement_8ddf997b",
-            "vmArgs": "--module-path \"lib\" --add-modules javafx.controls,javafx.fxml"
-        },
-        {
-            "type": "java",
-            "name": "Launch Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Launch Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "CoffeeShopSystemManagement_514da349",
-            "vmArgs": "--module-path \"lib\" --add-modules javafx.controls,javafx.fxml"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Coffee Shop CLI",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/python_app/app.py",
+      "console": "integratedTerminal",
+      "args": ["list-drinks"]
+    }
+  ]
 }
